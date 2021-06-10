@@ -57,7 +57,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnRegresarInicio"
+        android:id="@+id/btnRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
@@ -76,7 +76,7 @@
         android:text="@string/btnVender"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:backgroundTint="@android:color/holo_blue_dark"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegresarInicio"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

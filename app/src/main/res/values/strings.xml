@@ -5,4 +5,8 @@
     <string name="txtBuscarArticulo">Ingrese el ID del artículo</string>
     <string name="btnRegresarInicio">Regresar al Inicio</string>
     <string name="btnVender">Realizar Venta</string>
+    <string name="labelBuscar">Buscar:</string>
+    <string name="txtBuscarArticuloVendido">Buscar artículo vendido</string>
+    <string name="btnBuscarArticuloVendido">Buscar</string>
+    <string name="btnRegresar">Volver al Inicio</string>
 </resources>
