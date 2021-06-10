@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ProyectoFinal</string>
+    <string name="labelVentas">Buscar:</string>
+    <string name="btnBuscarArticuloVentas">Añadir</string>
+    <string name="txtBuscarArticulo">Ingrese el ID del artículo</string>
+    <string name="btnRegresarInicio">Regresar al Inicio</string>
+    <string name="btnVender">Realizar Venta</string>
 </resources>
