@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal">
-        <activity android:name=".Activity_VerInventario"></activity>
+        <activity android:name=".Activity_ModificarInventario"></activity>
+        <activity android:name=".Activity_VerInventario" />
         <activity android:name=".Activity_HistorialVentas" />
         <activity android:name=".Activity_Ventas" />
         <activity android:name=".MainActivity">

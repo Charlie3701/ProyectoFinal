@@ -15,6 +15,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/labelBuscar"
         android:textColor="#101010"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,6 +42,7 @@
         android:layout_marginLeft="308dp"
         android:layout_marginTop="24dp"
         android:text="@string/btnBuscarArticuloVendido"
+        android:textSize="14sp"
         app:backgroundTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,10 +51,11 @@
         android:id="@+id/Regresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="632dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="636dp"
         android:text="@string/btnRegresarInicio"
+        android:textSize="24sp"
         app:backgroundTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
