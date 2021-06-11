@@ -13,4 +13,6 @@
     <string name="btnVerInventario">VEr Inventario</string>
     <string name="btnModificarInventario">Modificar Inventario</string>
     <string name="btnHitorialVentas">Ver Historial de Ventas</string>
+
+
 </resources>
