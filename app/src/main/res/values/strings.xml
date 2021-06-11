@@ -9,4 +9,18 @@
     <string name="txtBuscarArticuloVendido">Buscar artículo vendido</string>
     <string name="btnBuscarArticuloVendido">Buscar</string>
     <string name="btnRegresar">Volver al Inicio</string>
+    <string name="btnRealizarVenta">Realizar Venta</string>
+    <string name="btnVerInventario">VEr Inventario</string>
+    <string name="btnModificarInventario">Modificar Inventario</string>
+    <string name="btnHitorialVentas">Ver Historial de Ventas</string>
+    <string name="modelo">Modelo</string>
+    <string name="nombre">Nombre</string>
+    <string name="precio">Precio</string>
+    <string name="existencia">Existencia</string>
+    <string name="btnInsertar">Insertar Nuevo</string>
+    <string name="btnModificarI">Modificar producto</string>
+
+
+
+
 </resources>
