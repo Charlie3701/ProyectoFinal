@@ -9,4 +9,8 @@
     <string name="txtBuscarArticuloVendido">Buscar artículo vendido</string>
     <string name="btnBuscarArticuloVendido">Buscar</string>
     <string name="btnRegresar">Volver al Inicio</string>
+    <string name="btnRealizarVenta">Realizar Venta</string>
+    <string name="btnVerInventario">VEr Inventario</string>
+    <string name="btnModificarInventario">Modificar Inventario</string>
+    <string name="btnHitorialVentas">Ver Historial de Ventas</string>
 </resources>
