@@ -10,12 +10,11 @@
         android:id="@+id/HistorialVentas"
         android:layout_width="400dp"
         android:layout_height="68sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="576dp"
         android:text="@string/btnHitorialVentas"
         android:textSize="24sp"
         app:backgroundTint="#605D5D"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,12 +22,11 @@
         android:id="@+id/ModificarInventario"
         android:layout_width="400dp"
         android:layout_height="68dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="472dp"
         android:text="@string/btnModificarInventario"
         android:textSize="24sp"
         app:backgroundTint="#605D5D"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,12 +34,11 @@
         android:id="@+id/RealizarVenta"
         android:layout_width="400dp"
         android:layout_height="68dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="284dp"
         android:text="@string/btnRealizarVenta"
         android:textSize="24sp"
         app:backgroundTint="#605D5D"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,12 +46,11 @@
         android:id="@+id/VerInventario"
         android:layout_width="400dp"
         android:layout_height="68dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="376dp"
         android:text="@string/btnVerInventario"
         android:textSize="24sp"
         app:backgroundTint="#605D5D"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
