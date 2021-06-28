@@ -12,6 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="532dp"
         android:text="@string/btnRegresarInicio"
+        android:fontFamily="casual"
         android:textSize="24sp"
         app:backgroundTint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,13 +31,15 @@
             android:id="@+id/Insertar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btnInsertar" />
+            android:text="@string/btnInsertar"
+            android:fontFamily="casual"/>
 
         <RadioButton
             android:id="@+id/Modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btnModificarI" />
+            android:text="@string/btnModificarI"
+            android:fontFamily="casual"/>
     </RadioGroup>
 
     <EditText
@@ -49,6 +52,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/modelo"
+        android:fontFamily="casual"
         android:inputType="textPersonName"
         android:textColor="#171616"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,9 +67,9 @@
         android:layout_marginTop="40dp"
         android:autofillHints=""
         android:ems="10"
+        android:fontFamily="casual"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
-        android:text="@string/nombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Modelo" />
 
@@ -78,9 +82,9 @@
         android:layout_marginTop="40dp"
         android:autofillHints=""
         android:ems="10"
+        android:fontFamily="casual"
         android:hint="@string/precio"
         android:inputType="textPersonName"
-        android:text="@string/precio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Nombre" />
 
@@ -93,9 +97,9 @@
         android:layout_marginTop="40dp"
         android:autofillHints=""
         android:ems="10"
+        android:fontFamily="casual"
         android:hint="@string/existencia"
         android:inputType="textPersonName"
-        android:text="@string/existencia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Precio" />
 
@@ -105,6 +109,7 @@
         android:layout_height="58dp"
         android:layout_marginTop="616dp"
         android:text="@string/btnModificarInventario"
+        android:fontFamily="casual"
         android:textSize="24sp"
         app:backgroundTint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
