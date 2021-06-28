@@ -6,51 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/HistorialVentas"
-        android:layout_width="400dp"
-        android:layout_height="68sp"
-        android:layout_marginTop="576dp"
-        android:text="@string/btnHitorialVentas"
-        android:textSize="24sp"
-        app:backgroundTint="#605D5D"
+    <TextView
+        android:id="@+id/TituloLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="casual"
+        android:text="@string/TituloLogin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/ModificarInventario"
-        android:layout_width="400dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="472dp"
-        android:text="@string/btnModificarInventario"
-        android:textSize="24sp"
-        app:backgroundTint="#605D5D"
+    <LinearLayout
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TituloLogin">
 
-    <Button
-        android:id="@+id/RealizarVenta"
-        android:layout_width="400dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="284dp"
-        android:text="@string/btnRealizarVenta"
-        android:textSize="24sp"
-        app:backgroundTint="#605D5D"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/txtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/txtUsuario"
+            android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/VerInventario"
-        android:layout_width="400dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="376dp"
-        android:text="@string/btnVerInventario"
-        android:textSize="24sp"
-        app:backgroundTint="#605D5D"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/txtContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/txtContraseña"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:onClick="Login"
+            android:text="@string/btnLogin"
+            android:textColor="@color/white"
+            app:backgroundTint="@android:color/holo_blue_dark" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

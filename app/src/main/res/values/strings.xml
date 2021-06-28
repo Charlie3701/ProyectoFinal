@@ -19,8 +19,10 @@
     <string name="existencia">Existencia</string>
     <string name="btnInsertar">Insertar Nuevo</string>
     <string name="btnModificarI">Modificar producto</string>
-
-
+    <string name="TituloLogin">INICIO DE SESIÓN</string>
+    <string name="txtUsuario">Ingrese el Usuario</string>
+    <string name="txtContraseña">Contraseña</string>
+    <string name="btnLogin">INGRESAR</string>
 
 
 </resources>
