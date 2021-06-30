@@ -4,29 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#68FD8B5E"
+    android:background="@drawable/bg_color"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/TituloLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:fontFamily="casual"
-        android:text="@string/TituloLogin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
-        android:layout_width="206dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_width="377dp"
+        android:layout_height="383dp"
+        android:background="#33FFFFFF"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TituloLogin">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274">
+
+        <TextView
+            android:id="@+id/TituloLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/TituloLogin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/icons" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="184dp"
+            app:srcCompat="@drawable/logo" />
 
         <EditText
             android:id="@+id/txtUsuario"
@@ -36,7 +43,9 @@
             android:ems="10"
             android:fontFamily="casual"
             android:hint="@string/txtUsuario"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/txtContraseña"
@@ -46,7 +55,10 @@
             android:ems="10"
             android:fontFamily="casual"
             android:hint="@string/txtContraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -56,7 +68,8 @@
             android:onClick="Login"
             android:text="@string/btnLogin"
             android:textColor="@color/white"
-            app:backgroundTint="@android:color/holo_blue_dark" />
+            app:backgroundTint="@color/primary" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
     tools:context=".Activity_ModificarInventario">
 
     <Button
@@ -11,10 +12,10 @@
         android:layout_width="306dp"
         android:layout_height="48dp"
         android:layout_marginTop="532dp"
-        android:text="@string/btnRegresarInicio"
         android:fontFamily="casual"
+        android:text="@string/btnRegresarInicio"
         android:textSize="24sp"
-        app:backgroundTint="@color/teal_700"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,15 +32,17 @@
             android:id="@+id/Insertar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:text="@string/btnInsertar"
-            android:fontFamily="casual"/>
+            android:textColor="#FFFFFF" />
 
         <RadioButton
             android:id="@+id/Modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:text="@string/btnModificarI"
-            android:fontFamily="casual"/>
+            android:textColor="#FFFFFF" />
     </RadioGroup>
 
     <EditText
@@ -51,10 +54,11 @@
         android:layout_marginTop="144dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/modelo"
         android:fontFamily="casual"
+        android:hint="@string/modelo"
         android:inputType="textPersonName"
         android:textColor="#171616"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,6 +74,7 @@
         android:fontFamily="casual"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
+        android:textColorHint="#FBFBFB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Modelo" />
 
@@ -85,6 +90,7 @@
         android:fontFamily="casual"
         android:hint="@string/precio"
         android:inputType="textPersonName"
+        android:textColorHint="#FBFBFB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Nombre" />
 
@@ -100,6 +106,7 @@
         android:fontFamily="casual"
         android:hint="@string/existencia"
         android:inputType="textPersonName"
+        android:textColorHint="#FFFEFE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Precio" />
 
@@ -108,10 +115,10 @@
         android:layout_width="352dp"
         android:layout_height="58dp"
         android:layout_marginTop="616dp"
-        android:text="@string/btnModificarInventario"
         android:fontFamily="casual"
+        android:text="@string/btnModificarInventario"
         android:textSize="24sp"
-        app:backgroundTint="@color/teal_700"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"

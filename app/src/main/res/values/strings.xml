@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProyectoFinal</string>
+    <string name="app_name">CVIA</string>
     <string name="labelVentas">Buscar:</string>
     <string name="btnBuscarArticuloVentas">Añadir</string>
     <string name="txtBuscarArticulo">Ingrese el ID del artículo</string>

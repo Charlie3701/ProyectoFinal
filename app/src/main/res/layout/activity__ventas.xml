@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
     tools:context=".Activity_Ventas">
 
     <TextView
@@ -15,9 +16,10 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:text="@string/labelVentas"
         android:fontFamily="casual"
+        android:text="@string/labelVentas"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#F8F7F7"
         app:layout_constraintEnd_toStartOf="@+id/txtBuscarArticulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,15 +33,16 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="@string/txtBuscarArticulo"
         android:fontFamily="casual"
+        android:hint="@string/txtBuscarArticulo"
         android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/btnBuscarArticuloVentas"
         app:layout_constraintStart_toEndOf="@+id/labelVentas"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnBuscarArticuloVentas"
@@ -50,10 +53,10 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:text="@string/btnBuscarArticuloVentas"
         android:fontFamily="casual"
+        android:text="@string/btnBuscarArticuloVentas"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="@color/teal_200"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txtBuscarArticulo"
@@ -64,10 +67,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="@string/btnRegresarInicio"
         android:fontFamily="casual"
+        android:text="@string/btnRegresarInicio"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="@color/teal_700"
+        app:backgroundTint="@color/primary_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -77,10 +80,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="@string/btnVender"
         android:fontFamily="casual"
+        android:text="@string/btnVender"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:backgroundTint="@android:color/holo_blue_dark"
+        app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
