@@ -23,6 +23,7 @@
     <string name="txtUsuario">Ingrese el Usuario</string>
     <string name="txtContraseña">Contraseña</string>
     <string name="btnLogin">INGRESAR</string>
+    <string name="Descripcion">IconoApp</string>
 
 
 </resources>

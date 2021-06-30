@@ -1,5 +1,6 @@
 package com.example.proyectofinal;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -40,8 +41,9 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
             "direccion char(60) NOT NULL);";
 
     String tabla_usuarios = "CREATE TABLE usuarios (" +
-            "  id_usuario int(11) primary key NOT NULL," +
-            "  nombre_usuario char(30) NOT NULL);";
+            "  id_usuario int primary key," +
+            "  nombre_usuario text," +
+            " contrasena text);";
 
     String tabla_ventas = "CREATE TABLE ventas (" +
             "id_venta int(11) primary key NOT NULL," +
@@ -60,6 +62,13 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         Zapateria.execSQL(tabla_articulos);
         Zapateria.execSQL(tabla_compra);
         Zapateria.execSQL(tabla_ventas);
+
+        ContentValues insercion_usuarios = new ContentValues();
+        insercion_usuarios.put("id_usuario", 1);
+        insercion_usuarios.put("nombre_usuario","Alejandra");
+        insercion_usuarios.put("contrasena","123456789");
+        Zapateria.insert("usuarios",null, insercion_usuarios);
+
     }
 
     @Override

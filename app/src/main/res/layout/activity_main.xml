@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/TituloLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="casual"
             android:text="@string/TituloLogin"
@@ -33,6 +33,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="184dp"
+            android:contentDescription="@string/Descripcion"
             app:srcCompat="@drawable/logo" />
 
         <EditText
