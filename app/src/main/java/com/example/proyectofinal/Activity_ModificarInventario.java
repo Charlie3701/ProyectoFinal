@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Activity_ModificarInventario extends AppCompatActivity {
-    private EditText modelo, nombre, precio, existencia, descripcion;
+    private EditText modelo, nombre, precio, existencia, descripcion, proveeddor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +27,18 @@ public class Activity_ModificarInventario extends AppCompatActivity {
 
     public void seleccion(View view) {
         String Modelo = modelo.getText().toString();
+        String Nombre_p = nombre.getText().toString();
+        String Precio = precio.getText().toString();
+        String Existencia = existencia.getText().toString();
+        String Descripcion =descripcion.getText().toString();
+        //String Proveedor = proveedor.getText().toString();
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "Zapateria"
                 ,null,1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
 
         switch (view.getId()) {
+            //float Precio1=Float.parseFloat(Precio);
             case R.id.Insertar:
 
                 try {
@@ -40,7 +46,7 @@ public class Activity_ModificarInventario extends AppCompatActivity {
                             + Modelo , null);
                     if(fila.getCount()==0) {
                         fila.close();
-                     BaseDeDatos.execSQL("INSERT INTO articulos VALUES ('"+modelo+"','"+nombre+"','"+precio+"','"+existencia+"','"+descripcion+"')");
+                     BaseDeDatos.execSQL("INSERT INTO articulos VALUES ('"+Modelo+"','"+Nombre_p+"','"+precio+"','"+existencia+"','"+descripcion+"')");
                         Toast.makeText(this, "Insersión exitosa", Toast.LENGTH_SHORT).show();
                         BaseDeDatos.close();
 
