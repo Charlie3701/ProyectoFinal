@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Activity_ModificarInventario extends AppCompatActivity {
-    private EditText modelo, nombre, precio, existencia, descripcion, proveeddor;
+    private EditText modelo, nombre, precio, existencia, descripcion, proveedor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,30 +23,35 @@ public class Activity_ModificarInventario extends AppCompatActivity {
         precio=(EditText) findViewById(R.id.Precio);
         existencia=(EditText) findViewById(R.id.Existencia);
         descripcion=(EditText) findViewById(R.id.Descripcion);
+        proveedor=(EditText) findViewById(R.id.Proveedor);
     }
 
     public void seleccion(View view) {
-        String Modelo = modelo.getText().toString();
-        String Nombre_p = nombre.getText().toString();
-        String Precio = precio.getText().toString();
-        String Existencia = existencia.getText().toString();
-        String Descripcion =descripcion.getText().toString();
-        //String Proveedor = proveedor.getText().toString();
+        String Modelo_ = modelo.getText().toString();
+        String Nombre_ = nombre.getText().toString();
+        String Precio_ = precio.getText().toString();
+        String Existencia_ = existencia.getText().toString();
+        String Descripcion_ =descripcion.getText().toString();
+        String Proveedor_ = proveedor.getText().toString();
+        int id_articulo=Integer.parseInt(Modelo_);
+        int Cantidad =Integer.parseInt(Existencia_);
+        float Precio1=Float.parseFloat(Precio_);
+        int id_proveedor=Integer.parseInt(Proveedor_);
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "Zapateria"
                 ,null,1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
 
         switch (view.getId()) {
-            //float Precio1=Float.parseFloat(Precio);
+
             case R.id.Insertar:
 
                 try {
                     Cursor fila = BaseDeDatos.rawQuery("select * from articulos where  id_articulo= '"
-                            + Modelo , null);
+                            + Modelo_ , null);
                     if(fila.getCount()==0) {
                         fila.close();
-                     BaseDeDatos.execSQL("INSERT INTO articulos VALUES ('"+Modelo+"','"+Nombre_p+"','"+precio+"','"+existencia+"','"+descripcion+"')");
+                     BaseDeDatos.execSQL("INSERT INTO articulos VALUES ('"+id_articulo+"','"+Nombre_+"','"+Precio1+"','"+Cantidad+"','"+Descripcion_+"','"+id_proveedor+"')");
                         Toast.makeText(this, "Insersión exitosa", Toast.LENGTH_SHORT).show();
                         BaseDeDatos.close();
 
@@ -70,7 +75,7 @@ public class Activity_ModificarInventario extends AppCompatActivity {
                 try {
 
                 Cursor fila = BaseDeDatos.rawQuery("select * from articulos where  id_articulo= '"
-                        + Modelo , null);
+                        + id_articulo , null);
                 if(fila.getCount()!=0) {
 
                     modelo.setText(fila.getString(1));
@@ -79,7 +84,9 @@ public class Activity_ModificarInventario extends AppCompatActivity {
                     existencia.setText(fila.getString(4));
                     descripcion.setText(fila.getString(5));
                     fila.close();
-                    BaseDeDatos.execSQL("UPDATE  articulos set id_articulo='"+modelo+"' nombre_articulo='"+nombre+"',precio='"+precio+"', existencia='"+existencia+"',  descripcion='"+descripcion+"' ");
+                    BaseDeDatos.execSQL("UPDATE  articulos set id_articulo='"+id_articulo+"' nombre_articulo='"+Nombre_+"',precio='"+Precio1+"'," +
+                            "existencia='"+Cantidad+"', " + " descripcion='"+Descripcion_+"', id_proveedor='"+id_proveedor+"' ");
+
                     Toast.makeText(this, "Modificación exitosa", Toast.LENGTH_SHORT).show();
                     BaseDeDatos.close();
                     modelo.setText("");
