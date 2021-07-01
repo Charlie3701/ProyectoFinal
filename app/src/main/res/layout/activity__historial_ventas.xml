@@ -34,6 +34,7 @@
         android:hint="@string/txtBuscarArticuloVendido"
         android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFEFE"
         android:textColorHint="#F8F8F8"
         app:layout_constraintStart_toEndOf="@+id/labelBuscar"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,6 +49,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:fontFamily="casual"
+        android:onClick="buscar"
         android:text="@string/btnBuscarArticuloVendido"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:backgroundTint="@color/primary"
@@ -61,9 +63,37 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:fontFamily="casual"
+        android:onClick="regresar"
         android:text="@string/btnRegresar"
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="491dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBuscarArticuloVendido">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FBFBFB" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -69,6 +69,13 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         insercion_usuarios.put("contrasena","123456789");
         Zapateria.insert("usuarios",null, insercion_usuarios);
 
+        insercion_usuarios.put("id_venta", 1);
+        insercion_usuarios.put("fecha_venta", 1);
+        insercion_usuarios.put("monto", 100);
+        insercion_usuarios.put("id_articulo", 1);
+        insercion_usuarios.put("id_Usuario", 1);
+        Zapateria.insert("ventas",null, insercion_usuarios);
+
     }
 
     @Override

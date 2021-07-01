@@ -25,6 +25,7 @@
     <string name="txtContraseña">Contraseña</string>
     <string name="btnLogin">INGRESAR</string>
     <string name="Descripcion">IconoApp</string>
+    <string name="contenidoVenta">Datos</string>
 
 
 </resources>

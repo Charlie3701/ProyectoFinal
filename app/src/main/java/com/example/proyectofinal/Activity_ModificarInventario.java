@@ -102,7 +102,7 @@ public class Activity_ModificarInventario extends AppCompatActivity {
     }
 
     public void regresar(View view){
-        Intent principal = new Intent(this,MainActivity.class);
+        Intent principal = new Intent(this,MenuActivity.class);
         startActivity(principal);
     }
 }
