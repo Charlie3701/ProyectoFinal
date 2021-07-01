@@ -16,6 +16,7 @@
     <string name="modelo">Modelo</string>
     <string name="nombre">Nombre</string>
     <string name="precio">Precio</string>
+    <string name="descripcion">Descripcion</string>
     <string name="existencia">Existencia</string>
     <string name="btnInsertar">Insertar Nuevo</string>
     <string name="btnModificarI">Modificar producto</string>

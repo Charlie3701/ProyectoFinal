@@ -11,12 +11,14 @@
         android:id="@+id/RegresarI"
         android:layout_width="306dp"
         android:layout_height="48dp"
-        android:layout_marginTop="532dp"
+        android:layout_marginTop="568dp"
         android:fontFamily="casual"
+        android:onClick="regresar"
         android:text="@string/btnRegresarInicio"
         android:textSize="24sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,17 +115,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Precio" />
 
+    <EditText
+        android:id="@+id/Descripcion"
+        android:layout_width="278dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="@string/descripcion"
+        android:inputType="textPersonName"
+        android:textColorHint="#FFFEFE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Existencia" />
+
     <Button
         android:id="@+id/ModificarA"
         android:layout_width="352dp"
         android:layout_height="58dp"
-        android:layout_marginTop="616dp"
+        android:layout_marginTop="632dp"
         android:fontFamily="casual"
+        android:onClick="seleccion"
         android:text="@string/btnModificarInventario"
         android:textSize="24sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
