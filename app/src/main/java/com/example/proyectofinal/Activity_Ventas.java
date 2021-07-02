@@ -34,7 +34,7 @@ public class Activity_Ventas extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         if (!articulo.isEmpty()){
-            Cursor fila = BaseDeDatos.rawQuery("select modelo from articulos where modelo="+articulo,null);
+            Cursor fila = BaseDeDatos.rawQuery("select id_articulo from articulos where id_articulo="+articulo,null);
 
             if(fila.moveToFirst()){
                 et_articulo.setText(fila.getString(0));
@@ -56,14 +56,16 @@ public class Activity_Ventas extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         Encapsulado en = new Encapsulado();
 
-        String id_articulo = et_articulo.getText().toString();
+        String idarticulo = et_articulo.getText().toString();
         String fecha= et_fecha.getText().toString();
         String monto = et_monto.getText().toString();
         int id_usuario = en.getID();
+        int id_articulo = Integer.parseInt(idarticulo);
         int monto1 = Integer.parseInt(monto);
+
         int id_venta= buscarID(BaseDeDatos);
 
-        if(!fecha.isEmpty() && !monto.isEmpty() && !id_articulo.isEmpty()) {
+        if(!fecha.isEmpty() && !monto.isEmpty() && !idarticulo.isEmpty()) {
             ContentValues registro = new ContentValues();
 
             registro.put("id_venta", id_venta);
