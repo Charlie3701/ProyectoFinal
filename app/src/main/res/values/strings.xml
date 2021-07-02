@@ -18,7 +18,6 @@
     <string name="precio">Precio</string>
     <string name="descripcion">Descripcion</string>
     <string name="existencia">Existencia</string>
-    <string name="proveedor">Proveedor</string>
     <string name="btnInsertar">Insertar Nuevo</string>
     <string name="btnModificarI">Modificar producto</string>
     <string name="TituloLogin">INICIO DE SESIÓN</string>
@@ -26,7 +25,5 @@
     <string name="txtContraseña">Contraseña</string>
     <string name="btnLogin">INGRESAR</string>
     <string name="Descripcion">IconoApp</string>
-    <string name="contenidoVenta">Datos</string>
-
-
+    <string name="VerInventario">Inventario Existente</string>
 </resources>
