@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 Cursor fila = BaseDeDatos.rawQuery("select id_usuario from usuarios where nombre_usuario = '"
                         + usuario_txt + "' and contrasena = '" + contrasena_txt+"'", null);
                 if(fila.getCount()!=0) {
+                    Encapsulado en = new Encapsulado();
+                    en.setID(Integer.parseInt(fila.getString(0)));
                     fila.close();
                     Intent ingreso = new Intent(this, MenuActivity.class);
                     BaseDeDatos.close();

@@ -54,6 +54,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:fontFamily="casual"
+        android:onClick="buscarAñadir"
         android:text="@string/btnBuscarArticuloVentas"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:backgroundTint="@color/primary"
@@ -82,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:fontFamily="casual"
+        android:onClick="venta"
         android:text="@string/btnVender"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:backgroundTint="@color/primary"
@@ -119,7 +121,7 @@
                 android:textColor="#FBFBFB" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewArticulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF" />

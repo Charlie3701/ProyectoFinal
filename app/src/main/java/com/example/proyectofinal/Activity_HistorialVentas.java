@@ -20,7 +20,7 @@ public class Activity_HistorialVentas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__historial_ventas);
         busqueda = (EditText)findViewById(R.id.txtBuscarArticuloVendido);
-        txtdatos = (TextView)findViewById(R.id.textView);
+        txtdatos = (TextView)findViewById(R.id.editTextTextMultiLine);
     }
 
     public void buscar(View view){
@@ -36,6 +36,7 @@ public class Activity_HistorialVentas extends AppCompatActivity {
             if(fila.moveToFirst()){
                 txtdatos.setText("ID   Fecha Venta    Monto ID Articulo  ID Usuario \\n"+
                         fila.getString(0)+fila.getString(1)+fila.getString(2)+fila.getString(3));
+                txtdatos.setKeyListener(null);
                 BaseDeDatos.close();
             } else {
                 Toast.makeText(this,"No existe el artículo", Toast.LENGTH_SHORT).show();
