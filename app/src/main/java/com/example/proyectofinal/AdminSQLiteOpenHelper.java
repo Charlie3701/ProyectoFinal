@@ -49,7 +49,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
             "id_venta int(11) primary key NOT NULL," +
             "fecha_venta datetime NOT NULL," +
             "monto int(11) NOT NULL," +
-            "id_articulo int(11) NOT NULL," +
+            "id_articulo text NOT NULL," +
             "id_Usuario int(11) NOT NULL," +
             "foreign key(id_articulo) references articulos(modelo)," +
             "foreign key(id_Usuario) references usuarios(id_usuario))";

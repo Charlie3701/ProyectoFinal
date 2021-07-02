@@ -56,16 +56,14 @@ public class Activity_Ventas extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         Encapsulado en = new Encapsulado();
 
-        String idarticulo = et_articulo.getText().toString();
+        String id_articulo = et_articulo.getText().toString();
         String fecha= et_fecha.getText().toString();
         String monto = et_monto.getText().toString();
         int id_usuario = en.getID();
-        int id_articulo = Integer.parseInt(idarticulo);
         int monto1 = Integer.parseInt(monto);
-
         int id_venta= buscarID(BaseDeDatos);
 
-        if(!fecha.isEmpty() && !monto.isEmpty() && !idarticulo.isEmpty()) {
+        if(!fecha.isEmpty() && !monto.isEmpty() && !id_articulo.isEmpty()) {
             ContentValues registro = new ContentValues();
 
             registro.put("id_venta", id_venta);
