@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         + usuario_txt + "' and contrasena = '" + contrasena_txt+"'", null);
                 if(fila.getCount()!=0) {
                     Encapsulado en = new Encapsulado();
+                    fila.moveToFirst();
                     en.setID(Integer.parseInt(fila.getString(0)));
                     fila.close();
                     Intent ingreso = new Intent(this, MenuActivity.class);

@@ -39,6 +39,7 @@
         android:hint="@string/txtBuscarArticulo"
         android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FBFBFB"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/btnBuscarArticuloVentas"
         app:layout_constraintStart_toEndOf="@+id/labelVentas"
@@ -105,26 +106,36 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:scrollbarThumbHorizontal="@color/icons"
+                android:text="@string/id_articulo"
+                android:textColor="#FDFCFC"
+                android:textColorHint="#FDFCFC" />
+
+            <EditText
                 android:id="@+id/editTextNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/monto"
                 android:inputType="number"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FBFBFB" />
 
             <EditText
                 android:id="@+id/editTextDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/fecha"
                 android:inputType="date"
-                android:textColor="#FBFBFB" />
+                android:textColor="#FBFBFB"
+                android:textColorHint="#FBF8F8" />
 
-            <TextView
-                android:id="@+id/textViewArticulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFFFF" />
         </LinearLayout>
     </ScrollView>
 

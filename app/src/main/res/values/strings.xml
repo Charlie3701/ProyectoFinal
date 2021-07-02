@@ -28,5 +28,9 @@
     <string name="Descripcion">IconoApp</string>
     <string name="contenidoVenta">Datos</string>
 
+    <string name="fecha">Fecha</string>
+    <string name="monto">Monto</string>
+    <string name="id_articulo">Id_Articulo</string>
+
 
 </resources>

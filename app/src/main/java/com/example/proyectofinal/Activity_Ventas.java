@@ -14,8 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Activity_Ventas extends AppCompatActivity {
-    private EditText et_buscarArti, et_fecha, et_monto;
-    private TextView tw_articulo;
+    private EditText et_buscarArti, et_fecha, et_monto, et_articulo;
 
 
     @Override
@@ -25,7 +24,7 @@ public class Activity_Ventas extends AppCompatActivity {
         et_buscarArti=(EditText)findViewById(R.id.txtBuscarArticulo);
         et_fecha=(EditText)findViewById(R.id.editTextDate);
         et_monto=(EditText)findViewById(R.id.editTextNumber);
-        tw_articulo=(TextView)findViewById(R.id.textViewArticulo);
+        et_articulo=(EditText)findViewById(R.id.editTextTextPersonName);
     }
 
     public void buscarAñadir (View view) {
@@ -38,7 +37,7 @@ public class Activity_Ventas extends AppCompatActivity {
             Cursor fila = BaseDeDatos.rawQuery("select id_articulo from articulos where id_articulo="+articulo,null);
 
             if(fila.moveToFirst()){
-                tw_articulo.setText(fila.getString(0));
+                et_articulo.setText(fila.getString(0));
                 BaseDeDatos.close();
             } else {
                 Toast.makeText(this,"No existe el artículo", Toast.LENGTH_SHORT).show();
@@ -57,7 +56,7 @@ public class Activity_Ventas extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         Encapsulado en = new Encapsulado();
 
-        String idarticulo = tw_articulo.getText().toString();
+        String idarticulo = et_articulo.getText().toString();
         String fecha= et_fecha.getText().toString();
         String monto = et_monto.getText().toString();
         int id_usuario = en.getID();
@@ -78,7 +77,7 @@ public class Activity_Ventas extends AppCompatActivity {
             BaseDeDatos.insert("ventas",null,registro);
 
             BaseDeDatos.close();
-            tw_articulo.setText("");
+            et_articulo.setText("");
             et_fecha.setText("");
             et_monto.setText("");
             Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
@@ -96,10 +95,14 @@ public class Activity_Ventas extends AppCompatActivity {
                 String idventa = fila.getString(0);
                 if (!idventa.isEmpty()){
                     id_venta=Integer.parseInt(idventa);
+                    fila.close();
                     return id_venta=id_venta+1;
+
                 }
+                fila.close();
                 return 1;
             }
+        fila.close();
         return 1;
     }
 
