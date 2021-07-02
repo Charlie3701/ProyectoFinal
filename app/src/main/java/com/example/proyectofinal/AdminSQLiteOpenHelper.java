@@ -11,11 +11,11 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     String tabla_articulos="CREATE TABLE articulos (" +
-            "id_articulo int(11) primary key NOT NULL," +
-            "nombre_articulo char(30) NOT NULL," +
-            "precio float NOT NULL," +
-            "existencia int(11) NOT NULL," +
-            "descripcion varchar(60) NOT NULL," +
+            "modelo text primary key NOT NULL," +
+            "nombre_articulo text NOT NULL," +
+            "precio real NOT NULL," +
+            "existencia text NOT NULL," +
+            "descripcion text NOT NULL," +
             "id_proveedor int(11), " +
             "foreign key(id_proveedor) references proveedores(id_proveedor));";
 
@@ -36,9 +36,9 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     String tabla_proveedores = "CREATE TABLE proveedores (" +
             "id_proveedor int(11) primary key NOT NULL," +
-            "nombre_proveedor char(30) NOT NULL," +
-            "telefono char(10) NOT NULL," +
-            "direccion char(60) NOT NULL);";
+            "nombre_proveedor text NOT NULL," +
+            "telefono text NOT NULL," +
+            "direccion text NOT NULL);";
 
     String tabla_usuarios = "CREATE TABLE usuarios (" +
             "  id_usuario int primary key," +
@@ -63,6 +63,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         Zapateria.execSQL(tabla_compra);
         Zapateria.execSQL(tabla_ventas);
 
+        //insersión de usuarios predeterminados
         ContentValues insercion_usuarios = new ContentValues();
         insercion_usuarios.put("id_usuario", 1);
         insercion_usuarios.put("nombre_usuario","Alejandra");
@@ -76,6 +77,40 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         insercion_usuarios.put("id_Usuario", 1);
         Zapateria.insert("ventas",null, insercion_usuarios);
 
+        //inserción de proveedores predeterminados
+        ContentValues insercion_proveedorLG = new ContentValues();
+        insercion_proveedorLG.put("id_proovedor", 1);
+        insercion_proveedorLG.put("nombre_prooveedor", "LG");
+        insercion_proveedorLG.put("telefono", "4771334567");
+        insercion_proveedorLG.put("direccion", "Valle de los Insurgentes #123, León, Gto.");
+        Zapateria.insert("proveedores", null, insercion_proveedorLG);
+
+        ContentValues insercion_proveedorNike = new ContentValues();
+        insercion_proveedorNike.put("id_proovedor", 2);
+        insercion_proveedorNike.put("nombre_prooveedor", "Nike");
+        insercion_proveedorNike.put("telefono", "4775678035");
+        insercion_proveedorNike.put("direccion", "Loma Bonita #186, León, Gto.");
+        Zapateria.insert("proveedores", null, insercion_proveedorNike);
+
+        ContentValues insercion_proveedorAdidas = new ContentValues();
+        insercion_proveedorAdidas.put("id_proveedor",3);
+        insercion_proveedorAdidas.put("nombre_prooveedor", "Adidas");
+        insercion_proveedorNike.put("telefono", "4753692230");
+        insercion_proveedorNike.put("direccion", "Punto Verde #258, León, Gto.");
+        Zapateria.insert("proveedores", null, insercion_proveedorAdidas);
+
+        //Inserción de articulos de ejemplo
+        String proveedores[] = {"LG","Nike","Adidas"};
+        for(int i=1; i<4; i++){
+            ContentValues articulos = new ContentValues();
+            articulos.put("modelo","MODEL"+i);
+            articulos.put("nombre_articulo","Tenis deportivo");
+            articulos.put("precio",236);
+            articulos.put("existencia","en existencia");
+            articulos.put("descripcion", "Tenis para eventos deportivos en oferta");
+            articulos.put("id_proveedor",proveedores[i-1]);
+            Zapateria.insert("articulos",null,articulos);
+        }
     }
 
     @Override
