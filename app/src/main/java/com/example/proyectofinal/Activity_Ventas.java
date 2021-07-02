@@ -34,7 +34,7 @@ public class Activity_Ventas extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         if (!articulo.isEmpty()){
-            Cursor fila = BaseDeDatos.rawQuery("select id_articulo from articulos where id_articulo="+articulo,null);
+            Cursor fila = BaseDeDatos.rawQuery("select modelo from articulos where modelo="+articulo,null);
 
             if(fila.moveToFirst()){
                 et_articulo.setText(fila.getString(0));

@@ -51,7 +51,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
             "monto int(11) NOT NULL," +
             "id_articulo int(11) NOT NULL," +
             "id_Usuario int(11) NOT NULL," +
-            "foreign key(id_articulo) references articulos(id_articulo)," +
+            "foreign key(id_articulo) references articulos(modelo)," +
             "foreign key(id_Usuario) references usuarios(id_usuario))";
 
     @Override
@@ -79,22 +79,22 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
         //inserción de proveedores predeterminados
         ContentValues insercion_proveedorLG = new ContentValues();
-        insercion_proveedorLG.put("id_proovedor", 1);
-        insercion_proveedorLG.put("nombre_prooveedor", "LG");
+        insercion_proveedorLG.put("id_proveedor", 1);
+        insercion_proveedorLG.put("nombre_proveedor", "LG");
         insercion_proveedorLG.put("telefono", "4771334567");
         insercion_proveedorLG.put("direccion", "Valle de los Insurgentes #123, León, Gto.");
         Zapateria.insert("proveedores", null, insercion_proveedorLG);
 
         ContentValues insercion_proveedorNike = new ContentValues();
-        insercion_proveedorNike.put("id_proovedor", 2);
-        insercion_proveedorNike.put("nombre_prooveedor", "Nike");
+        insercion_proveedorNike.put("id_proveedor", 2);
+        insercion_proveedorNike.put("nombre_proveedor", "Nike");
         insercion_proveedorNike.put("telefono", "4775678035");
         insercion_proveedorNike.put("direccion", "Loma Bonita #186, León, Gto.");
         Zapateria.insert("proveedores", null, insercion_proveedorNike);
 
         ContentValues insercion_proveedorAdidas = new ContentValues();
         insercion_proveedorAdidas.put("id_proveedor",3);
-        insercion_proveedorAdidas.put("nombre_prooveedor", "Adidas");
+        insercion_proveedorAdidas.put("nombre_proveedor", "Adidas");
         insercion_proveedorNike.put("telefono", "4753692230");
         insercion_proveedorNike.put("direccion", "Punto Verde #258, León, Gto.");
         Zapateria.insert("proveedores", null, insercion_proveedorAdidas);
