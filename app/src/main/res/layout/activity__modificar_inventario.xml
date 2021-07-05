@@ -11,22 +11,25 @@
         android:id="@+id/RegresarI"
         android:layout_width="306dp"
         android:layout_height="48dp"
-        android:layout_marginTop="568dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="casual"
         android:onClick="regresar"
         android:text="@string/btnRegresarInicio"
         android:textSize="24sp"
         app:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toTopOf="@+id/ModificarA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_width="342dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="42dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/Modelo"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -50,112 +53,100 @@
             android:textColor="#FFFFFF" />
     </RadioGroup>
 
-    <EditText
-        android:id="@+id/Modelo"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="108dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="casual"
-        android:hint="@string/modelo"
-        android:inputType="textPersonName"
-        android:textColor="#171616"
-        android:textColorHint="#FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/RegresarI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
 
-    <EditText
-        android:id="@+id/Nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="casual"
-        android:hint="@string/nombre"
-        android:inputType="textPersonName"
-        android:textColorHint="#FBFBFB"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Modelo" />
+        <EditText
+            android:id="@+id/Modelo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/modelo"
+            android:inputType="number"
+            android:textColorHint="@color/icons" />
 
-    <EditText
-        android:id="@+id/Precio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="casual"
-        android:hint="@string/precio"
-        android:inputType="textPersonName"
-        android:textColorHint="#FBFBFB"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nombre" />
+        <EditText
+            android:id="@+id/Proveedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/proveedor"
+            android:inputType="number"
+            android:textColorHint="@color/icons"
+            android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/Existencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="casual"
-        android:hint="@string/existencia"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFFEFE"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Precio" />
+        <EditText
+            android:id="@+id/Existencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/existencia"
+            android:fontFamily="casual"
+            android:inputType="number"
+            android:textColorHint="@color/icons"
+            android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/Descripcion"
-        android:layout_width="278dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:fontFamily="casual"
-        android:hint="@string/descripcion"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFFEFE"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Existencia" />
+        <EditText
+            android:id="@+id/Precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/precio"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/icons"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/Nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/nombre"
+            android:inputType="textPersonName"
+            android:textColorHint="#FBFBFB" />
+
+        <EditText
+            android:id="@+id/Descripcion"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/descripcion"
+            android:inputType="textPersonName"
+            android:textColorHint="#FFFEFE"
+            android:autofillHints="" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/ModificarA"
         android:layout_width="352dp"
         android:layout_height="58dp"
-        android:layout_marginTop="632dp"
+        android:layout_marginBottom="88dp"
         android:fontFamily="casual"
         android:onClick="seleccion"
         android:text="@string/btnModificarInventario"
         android:textSize="24sp"
         app:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/Proveedor"
-        android:layout_width="278dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="@string/proveedor"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFFEFE"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Descripcion" />
 </androidx.constraintlayout.widget.ConstraintLayout>

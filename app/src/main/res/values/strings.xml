@@ -11,9 +11,9 @@
     <string name="btnRegresar">Volver al Inicio</string>
     <string name="btnRealizarVenta">Realizar Venta</string>
     <string name="btnVerInventario">VEr Inventario</string>
-    <string name="btnModificarInventario">Modificar Inventario</string>
+    <string name="btnModificarInventario">Modificar/Agregar</string>
     <string name="btnHitorialVentas">Ver Historial de Ventas</string>
-    <string name="modelo">Modelo</string>
+    <string name="modelo">ID Artículo</string>
     <string name="nombre">Nombre</string>
     <string name="precio">Precio</string>
     <string name="descripcion">Descripcion</string>
