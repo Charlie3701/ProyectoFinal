@@ -34,8 +34,8 @@ public class Activity_HistorialVentas extends AppCompatActivity {
             Cursor fila = BaseDeDatos.rawQuery("select * from ventas where id_venta="+busquedaS,null);
 
             if(fila.moveToFirst()){
-                txtdatos.setText("ID   Fecha Venta    Monto ID Articulo  ID Usuario \\n"+
-                        fila.getString(0)+fila.getString(1)+fila.getString(2)+fila.getString(3));
+                txtdatos.setText(
+                        fila.getString(0)+" "+fila.getString(1)+" "+fila.getString(2)+" "+fila.getString(3)+" "+fila.getString(4));
                 txtdatos.setKeyListener(null);
                 BaseDeDatos.close();
             } else {
@@ -50,7 +50,7 @@ public class Activity_HistorialVentas extends AppCompatActivity {
     }
 
     public void regresar(View view){
-        Intent principal = new Intent(this,MainActivity.class);
+        Intent principal = new Intent(this,MenuActivity.class);
         startActivity(principal);
     }
 }

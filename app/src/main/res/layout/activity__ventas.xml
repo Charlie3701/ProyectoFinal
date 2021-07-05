@@ -93,8 +93,8 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="412dp"
+        android:layout_width="298dp"
+        android:layout_height="316dp"
         app:layout_constraintBottom_toTopOf="@+id/btnVender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,9 +110,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="casual"
                 android:inputType="textPersonName"
                 android:scrollbarThumbHorizontal="@color/icons"
-                android:fontFamily="casual"
                 android:text="@string/id_articulo"
                 android:textColor="#FDFCFC"
                 android:textColorHint="#FDFCFC" />
@@ -122,8 +122,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/monto"
                 android:fontFamily="casual"
+                android:hint="@string/monto"
                 android:inputType="number"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FBFBFB" />
@@ -133,8 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/fecha"
                 android:fontFamily="casual"
+                android:hint="@string/fecha"
                 android:inputType="date"
                 android:textColor="#FBFBFB"
                 android:textColorHint="#FBF8F8" />

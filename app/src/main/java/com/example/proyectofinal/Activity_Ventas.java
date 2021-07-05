@@ -107,7 +107,7 @@ public class Activity_Ventas extends AppCompatActivity {
     }
 
     public void regresar(View view){
-        Intent principal = new Intent(this,MenuActivity.class);
+        Intent principal = new Intent(this, MenuActivity.class);
         startActivity(principal);
     }
 }
