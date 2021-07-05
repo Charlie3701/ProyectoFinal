@@ -97,7 +97,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         String proveedores[] = {"LG","Nike","Adidas"};
         for(int i=1; i<4; i++){
             ContentValues articulos = new ContentValues();
-            articulos.put("modelo","MODEL"+i);
+            articulos.put("modelo",i);
             articulos.put("nombre_articulo","Tenis deportivo");
             articulos.put("precio",236);
             articulos.put("existencia","en existencia");
