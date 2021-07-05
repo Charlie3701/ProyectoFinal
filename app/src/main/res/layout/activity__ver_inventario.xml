@@ -7,45 +7,13 @@
     android:background="@drawable/bg_color"
     tools:context=".Activity_VerInventario">
 
-    <TextView
-        android:id="@+id/etiquetabuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="48dp"
-        android:fontFamily="casual"
-        android:text="@string/labelBuscar"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/BuscarArticulo"
-        android:layout_width="213dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="40dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="casual"
-        android:hint="@string/txtBuscarArticulo"
-        android:inputType="textPersonName"
-        android:textColor="#050505"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/Buscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="304dp"
         android:layout_marginLeft="304dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="casual"
         android:onClick="ConsultarPorIDArticulo"
         android:text="@string/btnBuscarArticuloVendido"
@@ -69,12 +37,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/btnRegresarMenu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BuscarArticulo">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,8 +51,8 @@
 
             <EditText
                 android:id="@+id/txtVerInventario"
-                android:layout_width="300dp"
-                android:layout_height="400dp"
+                android:layout_width="318dp"
+                android:layout_height="416dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:fontFamily="casual"
@@ -94,5 +62,22 @@
                 android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
+
+    <EditText
+        android:id="@+id/BuscarArticulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="@string/txtBuscarArticulo"
+        android:inputType="number"
+        android:textColorHint="@color/icons"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toStartOf="@+id/Buscar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

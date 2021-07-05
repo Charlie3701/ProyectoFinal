@@ -11,7 +11,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     String tabla_articulos="CREATE TABLE articulos (" +
-            "modelo int primary key NOT NULL," +
+            "id_articulo int primary key NOT NULL," +
             "nombre_articulo text NOT NULL," +
             "precio real NOT NULL," +
             "existencia text NOT NULL," +
@@ -97,7 +97,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         String proveedores[] = {"LG","Nike","Adidas"};
         for(int i=1; i<4; i++){
             ContentValues articulos = new ContentValues();
-            articulos.put("modelo",i);
+            articulos.put("id_articulo",i);
             articulos.put("nombre_articulo","Tenis deportivo");
             articulos.put("precio",236);
             articulos.put("existencia","en existencia");

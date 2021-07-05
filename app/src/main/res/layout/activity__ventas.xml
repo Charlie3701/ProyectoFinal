@@ -112,6 +112,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:scrollbarThumbHorizontal="@color/icons"
+                android:fontFamily="casual"
                 android:text="@string/id_articulo"
                 android:textColor="#FDFCFC"
                 android:textColorHint="#FDFCFC" />
@@ -122,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/monto"
+                android:fontFamily="casual"
                 android:inputType="number"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FBFBFB" />
@@ -132,10 +134,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/fecha"
+                android:fontFamily="casual"
                 android:inputType="date"
                 android:textColor="#FBFBFB"
                 android:textColorHint="#FBF8F8" />
-
         </LinearLayout>
     </ScrollView>
 

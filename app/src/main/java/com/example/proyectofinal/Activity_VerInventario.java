@@ -31,7 +31,7 @@ public class Activity_VerInventario extends AppCompatActivity {
             String inventario = "";
             if(fila.moveToFirst()){
                 while(!fila.isAfterLast()) {
-                    inventario+="MODELO: "+fila.getString(0)+"\n";
+                    inventario+="ID Artículo: "+fila.getString(0)+"\n";
                     inventario+="NOMBRE DEL ARTICULO: "+fila.getString(1)+"\n";
                     inventario+="PRECIO: "+fila.getString(2)+"\n";
                     inventario+="EXISTENCIA: "+fila.getString(3)+"\n";
@@ -64,11 +64,11 @@ public class Activity_VerInventario extends AppCompatActivity {
             String idArticulo_txt = idArticulo.getText().toString();
             if(!idArticulo_txt.isEmpty()){
                 String registro = "";
-                Cursor fila = BaseDeDatos.rawQuery("select * from articulos where modelo= '"
-                                + idArticulo_txt+"'", null);
+                Cursor fila = BaseDeDatos.rawQuery("select * from articulos where id_articulo="
+                                + idArticulo_txt, null);
                 if (fila.moveToFirst()) {
                     while (!fila.isAfterLast()) {
-                        registro += "MODELO: " + fila.getString(0) + "\n";
+                        registro += "ID ARTÍCULO: " + fila.getString(0) + "\n";
                         registro += "NOMBRE DEL ARTICULO: " + fila.getString(1) + "\n";
                         registro += "PRECIO: " + fila.getString(2) + "\n";
                         registro += "EXISTENCIA: " + fila.getString(3) + "\n";
@@ -84,7 +84,7 @@ public class Activity_VerInventario extends AppCompatActivity {
                 } else {
                     fila.close();
                     BaseDeDatos.close();
-                    pantalla.setText("Artículo no encontrado");
+                    pantalla.setText("ARTÍCULO NO ENCONTRADO");
                     pantalla.setKeyListener(null);
                 }
             }
