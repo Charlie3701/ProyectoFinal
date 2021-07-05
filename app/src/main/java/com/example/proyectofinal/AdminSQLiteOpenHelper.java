@@ -13,8 +13,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     String tabla_articulos="CREATE TABLE articulos (" +
             "id_articulo int primary key NOT NULL," +
             "nombre_articulo text NOT NULL," +
-            "precio real NOT NULL," +
-            "existencia text NOT NULL," +
+            "precio float NOT NULL," +
+            "existencia int NOT NULL," +
             "descripcion text NOT NULL," +
             "id_proveedor int(11), " +
             "foreign key(id_proveedor) references proveedores(id_proveedor));";
@@ -95,14 +95,14 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
         //Inserción de articulos de ejemplo
         String proveedores[] = {"LG","Nike","Adidas"};
-        for(int i=1; i<4; i++){
+        for(int i = 0; i< proveedores.length; i++){
             ContentValues articulos = new ContentValues();
             articulos.put("id_articulo",i);
             articulos.put("nombre_articulo","Tenis deportivo");
             articulos.put("precio",236);
-            articulos.put("existencia","en existencia");
-            articulos.put("descripcion", "Tenis para eventos deportivos en oferta");
-            articulos.put("id_proveedor",proveedores[i-1]);
+            articulos.put("existencia",150);
+            articulos.put("descripcion", "Tenis para eventos deportivos en oferta de proveedor "+proveedores[i]);
+            articulos.put("id_proveedor",i);
             Zapateria.insert("articulos",null,articulos);
         }
     }

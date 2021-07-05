@@ -2,6 +2,7 @@ package com.example.proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -43,6 +44,7 @@ public class Activity_ModificarInventario extends AppCompatActivity {
         int Cantidad =Integer.parseInt(Existencia_);
         float Precio1=Float.parseFloat(Precio_);
         int id_proveedor=Integer.parseInt(Proveedor_);
+
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "Zapateria"
                 ,null,1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
@@ -56,47 +58,59 @@ public class Activity_ModificarInventario extends AppCompatActivity {
                     BaseDeDatos.execSQL("INSERT INTO articulos VALUES ("+id_articulo+",'"+Nombre_+"','"+Precio1+"','"+Cantidad+"','"+Descripcion_+"','"+id_proveedor+"')");
                     Toast.makeText(this, "Insersión exitosa", Toast.LENGTH_SHORT).show();
                     BaseDeDatos.close();
+                    modelo.setText("");
+                    nombre.setText("");
+                    proveedor.setText("");
+                    descripcion.setText("");
+                    precio.setText("");
+                    existencia.setText("");
                 } else{
                     Toast.makeText(this, "Id invalido, ya existente en la base de datos", Toast.LENGTH_SHORT).show();
                     BaseDeDatos.close();
+                    modelo.setText("");
+                    nombre.setText("");
+                    proveedor.setText("");
+                    descripcion.setText("");
+                    precio.setText("");
+                    existencia.setText("");
                 }
             } catch(SQLException e){
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
                 BaseDeDatos.close();
                 modelo.setText("");
                 nombre.setText("");
+                proveedor.setText("");
                 descripcion.setText("");
                 precio.setText("");
                 existencia.setText("");
             }
         }
+
         else if(rbModificar.isChecked()==true) {
             try {
-                Cursor fila = BaseDeDatos.rawQuery("select * from articulos where  modelo= '"
-                        + Modelo + "'", null);
-                if (fila.getCount() != 0) {
-
-                    modelo.setText(fila.getString(1));
-                    nombre.setText(fila.getString(2));
-                    precio.setText(fila.getString(3));
-                    existencia.setText(fila.getString(4));
-                    descripcion.setText(fila.getString(5));
-                    fila.close();
-                    BaseDeDatos.execSQL("UPDATE  articulos set id_articulo='" + id_articulo + "' nombre_articulo='" + Nombre_ + "',precio='" + Precio1 + "'," +
-                            "existencia='" + Cantidad + "', " + " descripcion='" + Descripcion_ + "', id_proveedor='" + id_proveedor + "' ");
-
-                    Toast.makeText(this, "Modificación exitosa", Toast.LENGTH_SHORT).show();
+                if(!Modelo.isEmpty() && !Nombre_.isEmpty() && !Precio_.isEmpty() && !Existencia_.isEmpty()
+                && !Descripcion_.isEmpty() && !Proveedor_.isEmpty()){
+                    ContentValues modificar = new ContentValues();
+                    modificar.put("id_articulo",id_articulo);
+                    modificar.put("nombre_articulo",Nombre_);
+                    modificar.put("precio",Precio1);
+                    modificar.put("existencia",Cantidad);
+                    modificar.put("descripcion",Descripcion_);
+                    modificar.put("id_proveedor",id_proveedor);
+                    int registros_modificados = BaseDeDatos.update("articulos",modificar,
+                            "id_articulo ="+id_articulo,null);
                     BaseDeDatos.close();
                     modelo.setText("");
                     nombre.setText("");
                     descripcion.setText("");
                     precio.setText("");
                     existencia.setText("");
-
-                } else {
-                    Toast.makeText(this, "El artículo no existe en la base de datos", Toast.LENGTH_SHORT).show();
-                    BaseDeDatos.close();
-                }
+                    proveedor.setText("");
+                    if(registros_modificados==1)
+                        Toast.makeText(this, "Modificación exitosa", Toast.LENGTH_SHORT).show();
+                    else Toast.makeText(this, "El Artículo no existe", Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(this,"Ingresa los datos solicitados",Toast.LENGTH_SHORT).show();
             } catch (SQLException e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
                 BaseDeDatos.close();
@@ -104,9 +118,10 @@ public class Activity_ModificarInventario extends AppCompatActivity {
                 nombre.setText("");
                 descripcion.setText("");
                 precio.setText("");
+                proveedor.setText("");
                 existencia.setText("");
             }
-        } else
+        } else if(rbInsertar.isChecked()==false && rbModificar.isChecked()==false)
             Toast.makeText(this,"Selecciona la operación a realizar",Toast.LENGTH_SHORT).show();
     }
 
