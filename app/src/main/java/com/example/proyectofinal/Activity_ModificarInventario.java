@@ -27,13 +27,13 @@ public class Activity_ModificarInventario extends AppCompatActivity {
     }
 
     public void seleccion(View view) {
-        String Modelo_ = modelo.getText().toString();
+        String Modelo = modelo.getText().toString();
         String Nombre_ = nombre.getText().toString();
         String Precio_ = precio.getText().toString();
         String Existencia_ = existencia.getText().toString();
         String Descripcion_ =descripcion.getText().toString();
         String Proveedor_ = proveedor.getText().toString();
-        int id_articulo=Integer.parseInt(Modelo_);
+        int id_articulo=Integer.parseInt(Modelo);
         int Cantidad =Integer.parseInt(Existencia_);
         float Precio1=Float.parseFloat(Precio_);
         int id_proveedor=Integer.parseInt(Proveedor_);
@@ -47,11 +47,11 @@ public class Activity_ModificarInventario extends AppCompatActivity {
             case R.id.Insertar:
 
                 try {
-                    Cursor fila = BaseDeDatos.rawQuery("select * from articulos where  id_articulo= '"
-                            + Modelo_ , null);
+                    Cursor fila = BaseDeDatos.rawQuery("select * from articulos where  modelo= "
+                            + id_articulo, null);
                     if(fila.getCount()==0) {
                         fila.close();
-                     BaseDeDatos.execSQL("INSERT INTO articulos VALUES ('"+id_articulo+"','"+Nombre_+"','"+Precio1+"','"+Cantidad+"','"+Descripcion_+"','"+id_proveedor+"')");
+                     BaseDeDatos.execSQL("INSERT INTO articulos VALUES ('"+Modelo+"','"+Nombre_+"','"+Precio1+"','"+Cantidad+"','"+Descripcion_+"','"+id_proveedor+"')");
                         Toast.makeText(this, "Insersión exitosa", Toast.LENGTH_SHORT).show();
                         BaseDeDatos.close();
 
@@ -74,8 +74,8 @@ public class Activity_ModificarInventario extends AppCompatActivity {
             case R.id.Modificar:
                 try {
 
-                Cursor fila = BaseDeDatos.rawQuery("select * from articulos where  id_articulo= '"
-                        + id_articulo , null);
+                Cursor fila = BaseDeDatos.rawQuery("select * from articulos where  modelo= '"
+                        + Modelo+"'" , null);
                 if(fila.getCount()!=0) {
 
                     modelo.setText(fila.getString(1));

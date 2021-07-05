@@ -11,7 +11,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     String tabla_articulos="CREATE TABLE articulos (" +
-            "modelo text primary key NOT NULL," +
+            "modelo int primary key NOT NULL," +
             "nombre_articulo text NOT NULL," +
             "precio real NOT NULL," +
             "existencia text NOT NULL," +

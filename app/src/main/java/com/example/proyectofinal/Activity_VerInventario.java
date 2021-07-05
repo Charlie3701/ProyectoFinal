@@ -64,8 +64,8 @@ public class Activity_VerInventario extends AppCompatActivity {
             String idArticulo_txt = idArticulo.getText().toString();
             if(!idArticulo_txt.isEmpty()){
                 String registro = "";
-                Cursor fila = BaseDeDatos.rawQuery("select * from articulos where modelo= '" + idArticulo_txt+"'"
-                        , null);
+                Cursor fila = BaseDeDatos.rawQuery("select * from articulos where modelo= '"
+                                + idArticulo_txt+"'", null);
                 if (fila.moveToFirst()) {
                     while (!fila.isAfterLast()) {
                         registro += "MODELO: " + fila.getString(0) + "\n";
