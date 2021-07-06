@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,37 @@ public class Activity_HistorialVentas extends AppCompatActivity {
         setContentView(R.layout.activity__historial_ventas);
         busqueda = (EditText)findViewById(R.id.txtBuscarArticuloVendido);
         txtdatos = (TextView)findViewById(R.id.editTextTextMultiLine);
+
+        try{
+            AdminSQLiteOpenHelper conexion = new AdminSQLiteOpenHelper(this, "Zapateria",
+                    null, 1);
+            SQLiteDatabase BaseDeDatos = conexion.getWritableDatabase();
+
+            Cursor fila = BaseDeDatos.rawQuery("select * from ventas", null);
+            String ventas = "";
+            if(fila.moveToFirst()){
+                while(!fila.isAfterLast()) {
+                    ventas+="id_venta: "+fila.getString(0)+" ";
+                    ventas+="fecha_venta "+fila.getString(1)+" ";
+                    ventas+="PRECIO: "+fila.getString(2)+" ";
+                    ventas+="id Articulo: "+fila.getString(3)+" ";
+                    ventas+="Vendedor: "+fila.getString(4)+" \n";
+                    ventas+="-------------------------------\n";
+                    fila.moveToNext();
+                }
+                fila.close();
+                BaseDeDatos.close();
+                txtdatos.setText(ventas);
+                txtdatos.setKeyListener(null);
+            } else{
+                fila.close();
+                BaseDeDatos.close();
+                txtdatos.setText("No hay artículos en el inventario");
+                txtdatos.setKeyListener(null);
+            }
+        } catch (SQLException e){
+            Toast.makeText(this, "Error al mostrar el inventario", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void buscar(View view){
@@ -44,7 +76,7 @@ public class Activity_HistorialVentas extends AppCompatActivity {
             }
 
         }else{
-            Toast.makeText(this, "Debes introducir el ID del artículo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Debes introducir el ID de la venta", Toast.LENGTH_SHORT).show();
         }
 
     }
