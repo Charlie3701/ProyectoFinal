@@ -61,7 +61,7 @@ public class Activity_Ventas extends AppCompatActivity {
         }
         ahora = System.currentTimeMillis();
         Date fecha = new Date(ahora);
-        DateFormat df = new SimpleDateFormat("DD/MM/YYYY");
+        DateFormat df = new SimpleDateFormat("dd/MM/YYYY");
         String salida = df.format(fecha);
 
         et_fecha.setText(salida);
