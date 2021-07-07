@@ -103,6 +103,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:orientation="vertical">
 
             <EditText
@@ -145,6 +146,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="start|top"
+                android:fontFamily="casual"
                 android:inputType="textMultiLine"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FFFDFD" />

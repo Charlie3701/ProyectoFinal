@@ -36,34 +36,29 @@ public class Activity_Ventas extends AppCompatActivity {
 
     public void buscarAñadir (View view) {
         String articulo = et_buscarArti.getText().toString();
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "Zapateria"
-                , null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
         if (!articulo.isEmpty()){
-            Cursor fila = BaseDeDatos.rawQuery("select * from articulos where id_articulo="+articulo,null);
-
-            if(fila.moveToFirst()){
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "Zapateria"
+                    , null, 1);
+            SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+            Cursor fila = BaseDeDatos.rawQuery("select * from articulos where id_articulo=" + articulo, null);
+            if (fila.moveToFirst()) {
                 Encapsulado en = new Encapsulado();
                 et_articulo.setText(fila.getString(0));
                 et_monto.setText(fila.getString(2));
                 en.setExistencia(Integer.parseInt(fila.getString(3)));
-                et_descripcionarticulo.setText(fila.getString(1)+" \n"+ fila.getString(4));
+                et_descripcionarticulo.setText(fila.getString(1) + " \n" + fila.getString(4));
                 BaseDeDatos.close();
-            } else {
-                Toast.makeText(this,"No existe el artículo", Toast.LENGTH_SHORT).show();
-                BaseDeDatos.close();
-            }
-
-
-        }else{
+                } else {
+                    Toast.makeText(this, "No existe el artículo", Toast.LENGTH_SHORT).show();
+                    BaseDeDatos.close();
+                }
+        } else{
             Toast.makeText(this, "Debes introducir el ID del artículo", Toast.LENGTH_SHORT).show();
         }
         ahora = System.currentTimeMillis();
         Date fecha = new Date(ahora);
         DateFormat df = new SimpleDateFormat("dd/MM/YYYY");
         String salida = df.format(fecha);
-
         et_fecha.setText(salida);
     }
 
@@ -71,7 +66,6 @@ public class Activity_Ventas extends AppCompatActivity {
         Encapsulado en = new Encapsulado();
         int existenciaV = en.getExistencia();
         if(existenciaV!=0) {
-
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "Zapateria"
                     , null, 1);
             SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
@@ -105,9 +99,10 @@ public class Activity_Ventas extends AppCompatActivity {
                 fila.moveToFirst();
                 int existencia = Integer.parseInt(fila.getString(0));
                 existencia = existencia-1;
-                Cursor fila2 = BaseDeDatos.rawQuery("Update articulos set existencia= '"+existencia+"' Where id_articulo="+idarticulo,null);
+                ContentValues decrementoExistencias = new ContentValues();
+                decrementoExistencias.put("existencia",existencia);
+                BaseDeDatos.update("articulos",decrementoExistencias,"id_articulo="+idarticulo,null);
                 fila.close();
-                fila2.close();
                 BaseDeDatos.close();
             } else {
                 Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();

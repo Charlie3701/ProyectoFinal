@@ -32,12 +32,12 @@ public class Activity_HistorialVentas extends AppCompatActivity {
             String ventas = "";
             if(fila.moveToFirst()){
                 while(!fila.isAfterLast()) {
-                    ventas+="id_venta: "+fila.getString(0)+" ";
-                    ventas+="fecha_venta "+fila.getString(1)+" ";
-                    ventas+="PRECIO: "+fila.getString(2)+" ";
-                    ventas+="id Articulo: "+fila.getString(3)+" ";
+                    ventas+="id_venta: "+fila.getString(0)+"\n";
+                    ventas+="fecha_venta "+fila.getString(1)+"\n";
+                    ventas+="PRECIO: "+fila.getString(2)+"\n";
+                    ventas+="id Articulo: "+fila.getString(3)+"\n";
                     ventas+="Vendedor: "+fila.getString(4)+" \n";
-                    ventas+="-------------------------------\n";
+                    ventas+="-------------------------------------------\n";
                     fila.moveToNext();
                 }
                 fila.close();
